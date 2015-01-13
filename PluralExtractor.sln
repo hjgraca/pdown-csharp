@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralExtractor", "PluralExtractor\PluralExtractor.csproj", "{61876EF0-C2B0-439F-92E5-3C9889193EC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralModule", "PluralModule\PluralModule.csproj", "{745AA919-9BB2-4B7B-AE20-4479CEC22515}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralWindows", "PluralWindows\PluralWindows.csproj", "{3801AE30-A5A7-4E5E-9A5E-A8C874EF0156}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61876EF0-C2B0-439F-92E5-3C9889193EC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61876EF0-C2B0-439F-92E5-3C9889193EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61876EF0-C2B0-439F-92E5-3C9889193EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61876EF0-C2B0-439F-92E5-3C9889193EC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{745AA919-9BB2-4B7B-AE20-4479CEC22515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{745AA919-9BB2-4B7B-AE20-4479CEC22515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{745AA919-9BB2-4B7B-AE20-4479CEC22515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{745AA919-9BB2-4B7B-AE20-4479CEC22515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3801AE30-A5A7-4E5E-9A5E-A8C874EF0156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3801AE30-A5A7-4E5E-9A5E-A8C874EF0156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3801AE30-A5A7-4E5E-9A5E-A8C874EF0156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3801AE30-A5A7-4E5E-9A5E-A8C874EF0156}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

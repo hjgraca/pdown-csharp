@@ -1,0 +1,13 @@
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\bin\Debug\PluralWindows.exe.config
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\bin\Debug\PluralWindows.exe
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\bin\Debug\PluralWindows.pdb
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\bin\Debug\PluralModule.dll
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\bin\Debug\Newtonsoft.Json.dll
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\bin\Debug\PluralModule.pdb
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\bin\Debug\Newtonsoft.Json.xml
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\obj\Debug\PluralWindows.csprojResolveAssemblyReference.cache
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\obj\Debug\PluralWindows.Form1.resources
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\obj\Debug\PluralWindows.Properties.Resources.resources
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\obj\Debug\PluralWindows.csproj.GenerateResource.Cache
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\obj\Debug\PluralWindows.exe
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralWindows\obj\Debug\PluralWindows.pdb

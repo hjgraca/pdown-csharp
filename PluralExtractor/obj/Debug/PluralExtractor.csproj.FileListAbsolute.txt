@@ -1,0 +1,10 @@
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralExtractor\bin\Debug\PluralExtractor.exe.config
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralExtractor\bin\Debug\PluralExtractor.exe
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralExtractor\bin\Debug\PluralExtractor.pdb
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralExtractor\obj\Debug\PluralExtractor.exe
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralExtractor\obj\Debug\PluralExtractor.pdb
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralExtractor\bin\Debug\Newtonsoft.Json.dll
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralExtractor\bin\Debug\Newtonsoft.Json.xml
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralExtractor\bin\Debug\PluralModule.dll
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralExtractor\bin\Debug\PluralModule.pdb
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralExtractor\obj\Debug\PluralExtractor.csprojResolveAssemblyReference.cache

@@ -1,0 +1,7 @@
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralModule\bin\Debug\PluralModule.dll
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralModule\bin\Debug\PluralModule.pdb
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralModule\bin\Debug\Newtonsoft.Json.dll
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralModule\bin\Debug\Newtonsoft.Json.xml
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralModule\obj\Debug\PluralModule.dll
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralModule\obj\Debug\PluralModule.pdb
+c:\users\henrique.graca\documents\visual studio 2013\Projects\PluralExtractor\PluralModule\obj\Debug\PluralModule.csprojResolveAssemblyReference.cache
