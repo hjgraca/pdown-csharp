@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
@@ -28,9 +29,11 @@ namespace PluralExtractor
             var myWriter = new ConsoleTraceListener();
 
             var downloader = new Downloader(myWriter);
+            
+            
             foreach (var s in args)
             {
-                downloader.Download(s);
+                downloader.Download(s, ConfigurationManager.AppSettings["folder"]);
             }
 
             Console.WriteLine("DONE!!");

@@ -17,6 +17,8 @@ namespace PluralModule
 {
     public class Downloader
     {
+        private string _cookie = @"optimizelyEndUserId=oeu1422617105857r0.47923015779815614; newSiteVisited=true; _dc_gtm_UA-5643470-2=1; mf_23f90557-90d2-4682-9764-9e0e1aa7dc97=-1; _gat_UA-5643470-2=1; csAnnouncmentShown=true; __uvt=; __RequestVerificationToken_L2E1=OZQ71yn3-CIakcRU_kxvl8yp-VV2VZQdvDFWgDuTiVuBQ1tA4OmjIqarSr2BL5-znVKnGXacDk8Hg-Yd9V6MT5QLi941; PSM=858FBDAF2AFC5F2DD185E2BA54A9AFE44EC461384C845F3BA2F9ADED78F38F395B8711D804878C912668C48B7862BA6DB8A585C62BF595D17A18346DF58DC0583A8FD77BCD4D985CA33002F64FB277223F308092B9FA6FD7DD84982CEE86B743BAD615C107B50D91AE1CC0C6C9BFC5D88D6C8CC2A81C80A4F6EDAC45BB683E0738E0F19E58A15BB72B03082CD55226C99D38DE4B5624C8CBF82C5F073F73ADDDB578E7F97D94B722810F647D07813A86E7C2D1D7; _uslk_visits=1; _uslk_referrer=; _uslk_bootstrapped=1; _uslk_ct=0; _uslk_co=0; _uslk_active=0; _uslk_page_impressions=2; _uslk_app_state=Idle%3B0; visitor_id36882=74752644; _gali=mfa80; optimizelySegments=%7B%221227392893%22%3A%22direct%22%2C%221248401246%22%3A%22gc%22%2C%221258181237%22%3A%22false%22%7D; optimizelyBuckets=%7B%222312010859%22%3A%222321470446%22%7D; optimizelyPendingLogEvents=%5B%5D; _ga=GA1.2.1821668503.1422617107; uvts=2daAwFusdIRtUS1V; _we_wk_ss_lsf_=true; __ar_v4=BFLWHRV7W5FLTIZIQ4OSO6%3A20150201%3A5%7CNPTOMQSYYZABNNUIQDRAKL%3A20150201%3A5%7C4YCMENXFKFBQLNQCLOV3GS%3A20150201%3A4%7CDOMT5ESRMRH2PDG3LFNDCP%3A20150201%3A1";
+
         private readonly TraceListener _listener;
 
         public Downloader(TraceListener listener)
@@ -38,6 +40,12 @@ namespace PluralModule
             Download(moduleName, "c:\\");
         }
 
+        public void Download(string moduleName, string path, string cookie)
+        {
+            _cookie = cookie;
+            Download(moduleName, path);
+        }
+
         public void Download(string moduleName, string path)
         {
             HttpWebResponse response;
@@ -50,16 +58,18 @@ namespace PluralModule
                 var modules = (List<Module>)JsonConvert.DeserializeObject(ReadResponse(response), typeof(List<Module>));
                 response.Close();
                 int id = 1;
+                bool second = false;
                 foreach (var module in modules)
                 {
                     foreach (var clip in module.clips)
                     {
                         var par = HttpUtility.ParseQueryString(clip.playerParameters);
-                        var dir = path + par["course"] + "\\" + id + "-" + module.title + "\\";
+                        var dir = path + "\\" + par["course"] + "\\" + id + "-" + RemoveInvalidFilePathCharacters(module.title, "") + "\\";
                         var invalidChars = Path.GetInvalidFileNameChars();
                         var title = RemoveInvalidFilePathCharacters(clip.title, "");
+                        var name = RemoveInvalidFilePathCharacters(clip.name, "");
 
-                        string filename = dir + clip.name + " - " + title + ".mp4";
+                        string filename = dir + name + " - " + title + ".mp4";
 
                         if (File.Exists(filename))
                         {
@@ -73,7 +83,12 @@ namespace PluralModule
                         }
 
                         _listener.WriteLine("Using dir: " + dir);
-                        Thread.Sleep((int)TimeSpan.FromSeconds(1).TotalMilliseconds);
+                        if (second)
+                        {
+                            Thread.Sleep((int) TimeSpan.FromMinutes(1).TotalMilliseconds);
+                        }
+
+                        second = true;
 
                         if (Request_www_pluralsight_Video(out response, BuildPostBody(par, clip.clipIndex)))
                         {
@@ -172,7 +187,7 @@ namespace PluralModule
                 //request.Referer = "http://www.pluralsight.com/training/player?" + clipParams;
                 request.Headers.Set(HttpRequestHeader.AcceptEncoding, "gzip, deflate");
                 request.Headers.Set(HttpRequestHeader.AcceptLanguage, "en-GB,en;q=0.8,en-US;q=0.6,pt;q=0.4,pt-PT;q=0.2");
-                request.Headers.Set(HttpRequestHeader.Cookie, @"optimizelyEndUserId=oeu1416418471489r0.5932143593672663; mf_23f90557-90d2-4682-9764-9e0e1aa7dc97=-1; __uvt=; __utma=195666797.1071572145.1416418472.1418391652.1418391652.1; __utmc=195666797; __utmz=195666797.1418391652.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); newSiteVisited=true; _uslk_visits=1; _uslk_referrer=https%3A%2F%2Fwww.google.co.uk%2F; _uslk_bootstrapped=1; _uslk_ct=0; _uslk_co=0; _uslk_active=0; _uslk_page_impressions=4; _uslk_app_state=Idle%3B0; __RequestVerificationToken_L2E1=KvSnrAwdch34X0YXpW6QmO_dUi-f53f4-0Sl6xZo3S3Yse02rU2oxBpWZCNWRT2G4epu2FTH31i21GbP4kMR_wf7CaY1; _dc_gtm_UA-5643470-2=1; _gat_UA-5643470-2=1; PSM=79C440B1FD6441CFA6BDC4858DADC6B7DE120226402315ABD37A7E4D5CFC2FB6B8D30600CD70FEC6875F7D3E95D4980724F7F743C71AD53CBF0D3ABE52D997EFEECEFB943BC30986B7CAFCB40DC97EF43C4314C51D70191F506DB3D4289D6B867B110CF7A65C205CDC7736B975C33F0BE76DA7C20506F4F76D41DBDF0BBED7CA3EAAEC4750C88A107A9BA1958F8A73358561170B1E0B20FF84E7DB11AFFC719E670D4122454373B6762EE06B90E225E192FCBC5B; optimizelySegments=%7B%221227392893%22%3A%22search%22%2C%221248401246%22%3A%22gc%22%2C%221258181237%22%3A%22false%22%7D; optimizelyBuckets=%7B%222312010859%22%3A%222321470446%22%7D; _ga=GA1.2.1071572145.1416418472; __ar_v4=ALUY7XVFIBAENNNGZSQOT6%3A20150106%3A3%7CPHHEMWCT7RGRDFUHGCNCJV%3A20150106%3A4%7CBFLWHRV7W5FLTIZIQ4OSO6%3A20150106%3A24%7CNPTOMQSYYZABNNUIQDRAKL%3A20150106%3A24%7C4YCMENXFKFBQLNQCLOV3GS%3A20150106%3A8%7CDOMT5ESRMRH2PDG3LFNDCP%3A20150106%3A7%7CG2LTJRL5ORA4PICF7WRTYP%3A20150108%3A2; _we_wk_ss_lsf_=true; _gali=mfa92; optimizelyPendingLogEvents=%5B%5D; uvts=1dJohRWautxxAsDN; visitor_id36882=62000172; psPlayer=%7B%22videoScaling%22%3A%22Scaled%22%2C%22videoQuality%22%3A%22High%22%7D");
+                request.Headers.Set(HttpRequestHeader.Cookie, _cookie);
 
                 request.Method = "POST";
                 request.ServicePoint.Expect100Continue = false;

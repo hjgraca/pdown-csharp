@@ -23,6 +23,11 @@ namespace PluralWindows
             var myWriter = new ListBoxTraceListener(listBox1);
             var downloader = new Downloader(myWriter);
 
+            if (!string.IsNullOrWhiteSpace(cookieBox.Text))
+            {
+                downloader.Download(textBox1.Text, textBox2.Text, cookieBox.Text);
+            }
+
             downloader.Download(textBox1.Text, textBox2.Text);
         }
 

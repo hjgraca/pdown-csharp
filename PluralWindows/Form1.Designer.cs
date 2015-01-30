@@ -35,6 +35,8 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cookieBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listBox1
@@ -90,11 +92,29 @@
             this.textBox2.TabIndex = 5;
             this.textBox2.Text = "C:\\";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 266);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Cookie";
+            // 
+            // cookieBox
+            // 
+            this.cookieBox.Location = new System.Drawing.Point(12, 285);
+            this.cookieBox.Name = "cookieBox";
+            this.cookieBox.Size = new System.Drawing.Size(467, 20);
+            this.cookieBox.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 261);
+            this.ClientSize = new System.Drawing.Size(508, 317);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cookieBox);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -117,6 +137,8 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox cookieBox;
     }
 }
 
